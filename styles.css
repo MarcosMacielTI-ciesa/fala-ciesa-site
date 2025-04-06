@@ -1,128 +1,321 @@
-/* Reset de estilos */
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fdf3ee;
 }
 
-/* Cabeçalho estilo G1 */
+/* Header */
 header {
-  background-color: #c4160c;
+  background-color: #7ab8e8;
   color: white;
-  padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
 }
 
-#menu-btn {
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18px;
+}
+
+.menu-icon span {
+  display: block;
+  height: 3px;
+  width: 25px;
+  background: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.logo-text {
+  border-left: 2px solid white;
+  padding-left: 10px;
+  line-height: 1.2;
+}
+
+.logo-text strong {
+  display: block;
+  font-size: 18px;
+}
+
+
+
+
+
+
+/* Container da barra de pesquisa */
+#search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  transition: width 0.3s ease;
+  width: 40px;  /* Começa pequena como no G1 */
+  overflow: hidden;
+}
+
+/* Input de busca */
+#search {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+/* Botão de busca (lupa) */
+#search-btn {
   background: none;
   border: none;
-  color: white;
-  font-size: 18px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-#search {
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
+/* Expande ao clicar */
+#search-container.active {
+  width: 200px;
 }
+
+#search-container.active #search {
+  width: 100%;
+}
+
+
+
+
+
 
 /* Menu lateral */
-nav {
-  background-color: #e53935;
-  width: 200px;
-  height: 100vh;
+.sidebar {
   position: fixed;
   top: 0;
-  left: -220px;
-  transition: 0.3s;
-  padding-top: 20px;
+  left: -100%; /* <- corrigido para esconder 100% */
+  width: 300px;
+  height: 100%;
+  background-color: #7ab8e8;
+  color: white;
+  padding: 0px 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease;
+  z-index: 1000;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+.sidebar.open {
+  left: 0;
 }
 
-nav ul li {
-  padding: 10px;
+.sidebar img {
+  height: 90px;
+  width: 80px;
+  display: block;
 }
 
-nav ul li a {
+.sidebar a {
+  display: block;
+  font-size: 18px;
   color: white;
   text-decoration: none;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  position: relative;
 }
 
-/* Layout principal */
-main {
-  margin-left: 220px;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
+.sidebar a::after {
+  content: ">";
+  position: absolute;
+  right: 10px;
 }
 
-/* Destaque */
-#destaque {
-  background: #f5f5f5;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-#destaque img {
-  width: 100%;
-  border-radius: 5px;
-}
-
-/* Notícias */
-.noticia {
+.sidebar-logo {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  gap: 10px;
+  margin: 20px 0;
 }
 
-.noticia img {
-  width: 100px;
-  height: 70px;
+.sidebar-logo img {
+  height: 60px;
+  width: auto;
+  margin-top: -10px; /* ← isso sobe a imagem */
+
+}
+
+.sidebar-logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2725cf;
+  margin-top: -10px; /* ← isso sobe a imagem */
+
+}
+
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.show {
+  display: block;
+}
+
+/* Main layout */
+main {
+  display: flex;
+  padding: 20px 50px; /* ← aumentei nas laterais */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/**
+main {
+  display: flex;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+*/
+
+section {
+  flex: 3;
+  margin-right: 20px;
+}
+
+aside {
+  flex: 1;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+.card {
+  display: flex;
+  gap: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px; /* despancia dos cars */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card h2 {
+  color: #0077cc;
+  margin: 0;
+}
+
+.card p {
+  margin: 10px 0;
+}
+
+.card small {
+  color: #666;
+}
+
+/* Vídeos */
+.video-item {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.video-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
   margin-right: 10px;
   border-radius: 5px;
 }
 
-.noticia h3 {
-  font-size: 16px;
-  color: #c4160c;
+.video-item a {
+  color: #0077cc;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-/* Sidebar direita */
-#sidebar-right {
-  background: white;
+.video-item small {
+  display: block;
+  font-size: 13px;
+  color: #333;
+}
+
+
+.card-wrapper {
+  margin-bottom: 20px;
+}
+
+.divider {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+.right-sidebar {
+  display: flex;
+  flex-direction: column; /* Alinha os aside um embaixo do outro */
+  gap: 20px;
+  width: 300px;
+  float: right;
+}
+
+.sidebar-box {
+  background-color: white;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-#sidebar-right h2 {
-  font-size: 18px;
+.sidebar-card,
+.video-item {
+  display: flex;
+  gap: 10px;
   margin-bottom: 10px;
-  color: #c4160c;
 }
 
-#sidebar-right ul {
-  list-style: none;
-  padding: 0;
-}
-
-#sidebar-right ul li {
-  margin-bottom: 5px;
-}
-
-/* Rodapé */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
+.sidebar-card img,
+.video-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
 }

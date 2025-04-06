@@ -1,73 +1,201 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIESA News</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fala CIESA</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <header>
-        <button id="menu-btn">☰ MENU</button>
-        <h1>CIESA News</h1>
-        <input type="text" id="search" placeholder="Buscar...">
-    </header>
+  <!-- Menu Lateral -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="file:///C:/Users/user/Projetos/Projetos%20do%20CIESA/Projeto%20do%20Jornal/img/logo_ciesa.png" alt="Logo CIESA" />
+      <span style="font-size: 18px; font-weight: bold; margin-left: 10px;">CIESA</span>
+    </div>
+    <a href="#">eventos</a>
+    <a href="#">vídeos</a>
+    <a href="#">cardápio da cantina</a>
+    <a href="#">calendários acadêmicos</a>
+    <a href="#">achando e perdidos</a>
+  </div>
+  <div class="overlay" id="overlay"></div>
 
-    <!-- Menu lateral -->
-    <nav id="sidebar">
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Últimas Notícias</a></li>
-            <li><a href="#">Eventos</a></li>
-            <li><a href="#">Esportes</a></li>
-            <li><a href="#">Tecnologia</a></li>
-        </ul>
-    </nav>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="menu" id="menu-button">
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div style="font-size: 18px;">MENU</div>
+    </div>
 
-    <!-- Conteúdo principal -->
-    <main>
-        <section id="destaque">
-            <img src="imagens/destaque.jpg" alt="Evento no CIESA">
-            <h2>Grande Evento Acadêmico no CIESA</h2>
-            <p>O CIESA promove um evento inovador com palestrantes renomados...</p>
-        </section>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3208/3208707.png" alt="microfone" />
+      <div class="logo-text">
+        <div>Fala</div>
+        <strong>CIESA</strong>
+      </div>
+    </div>
 
-        <section id="noticias">
-            <h2>Últimas Notícias</h2>
-            <div class="noticia">
-                <img src="imagens/noticia1.jpg" alt="Biblioteca do CIESA">
-                <div>
-                    <h3>Nova Biblioteca do CIESA é Inaugurada</h3>
-                    <p>Espaço moderno e interativo foi aberto para os alunos...</p>
-                </div>
-            </div>
+    <div class="search-icon"></div>
+    
+    <div id="search-container">
+      <input type="text" id="search" placeholder="Buscar...">
+      <button id="search-btn">🔍</button>
+  </div>
 
-            <div class="noticia">
-                <img src="imagens/noticia2.jpg" alt="Startup no CIESA">
-                <div>
-                    <h3>Alunos do CIESA criam startup de tecnologia</h3>
-                    <p>Projeto inovador desenvolvido por estudantes de TI...</p>
-                </div>
-            </div>
-        </section>
+  </header>
 
-        <aside id="sidebar-right">
-            <h2>Assuntos em Alta</h2>
-            <ul>
-                <li>🔴 Tecnologia no ensino</li>
-                <li>🔴 Novas parcerias do CIESA</li>
-                <li>🔴 Oportunidades de estágio</li>
-            </ul>
-        </aside>
-    </main>
+  <!-- Conteúdo Principal -->
+  <main>
+    <!-- Cards -->
+    <section>
 
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2025 CIESA News - Todos os direitos reservados.</p>
-    </footer>
+      <div class="card-wrapper">
+        <div class="card">
+          <img src="https://i.imgur.com/7bC9VQz.jpg" alt="Apresentação">
+          <div>
+            <h2>Apresentação do trabalho de conclusão</h2>
+            <p>
+              A jornada acadêmica dos estudantes de Ciência da Computação chega a um dos momentos mais aguardados: a apresentação dos Trabalhos de Conclusão de Curso...
+            </p>
+            <small>Há 8 horas atrás</small>
+          </div>
+        </div>
+        <hr class="divider">
+      </div>
+
+      <div class="card-wrapper">
+        <div class="card">
+          <img src="https://i.imgur.com/MUlBBIY.png" alt="Achados">
+          <div>
+            <h2>Achados e Perdidos</h2>
+            <p>
+              Carregador de Celular Portátil Encontrado.<br>O proprietário pode recuperá-lo entrando em contato com [seu contato].
+            </p>
+            <small>Há 10 horas atrás</small>
+          </div>
+        </div>
+        <hr class="divider">
+      </div>
+
+      <div class="card-wrapper">
+        <div class="card">
+          <img src="https://i.imgur.com/ulJwYsl.png" alt="Calendário">
+          <div>
+            <h2>Calendário</h2>
+            <p>
+              Verifique as datas das próximas provas. A semana de provas está chegando! Confirme os dias para se preparar.
+            </p>
+            <small>Há 1 dia atrás</small>
+          </div>
+        </div>
+        <hr class="divider">
+      </div>
+
+
+      <div class="card-wrapper">
+        <div class="card">
+          <img src="https://i.imgur.com/ulJwYsl.png" alt="Calendário">
+          <div>
+            <h2>Calendário</h2>
+            <p>
+              Verifique as datas das próximas provas. A semana de provas está chegando! Confirme os dias para se preparar.
+            </p>
+            <small>Há 1 dia atrás</small>
+          </div>
+        </div>
+        <hr class="divider">
+      </div>
+
+
+      <div class="card-wrapper">
+        <div class="card">
+          <img src="https://i.imgur.com/ulJwYsl.png" alt="Calendário">
+          <div>
+            <h2>Calendário</h2>
+            <p>
+              Verifique as datas das próximas provas. A semana de provas está chegando! Confirme os dias para se preparar.
+            </p>
+            <small>Há 1 dia atrás</small>
+          </div>
+        </div>
+        <hr class="divider">
+      </div>
+
+      
+      <div class="card-wrapper">
+        <div class="card">
+          <img src="https://i.imgur.com/ulJwYsl.png" alt="Calendário">
+          <div>
+            <h2>Calendário</h2>
+            <p>
+              Verifique as datas das próximas provas. A semana de provas está chegando! Confirme os dias para se preparar.
+            </p>
+            <small>Há 1 dia atrás</small>
+          </div>
+        </div>
+        <!-- último card não precisa de linha -->
+      </div>
+
+    </section>
+
+    <div class="right-sidebar">
+      <!-- Bloco lateral 1 (já existente) -->
+      <aside class="sidebar-box">
+        <h3>Mais Acessadas</h3>
+        <div class="sidebar-card">
+          <img src="https://i.imgur.com/Jt6zSnT.jpg" alt="Notícia 1">
+          <div>
+            <small>Confira o calendário de provas</small>
+            <a href="#">Calendário</a>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <img src="https://i.imgur.com/Jt6zSnT.jpg" alt="Notícia 2">
+          <div>
+            <small>Horários de provas liberados</small>
+            <a href="#">Provas da semana</a>
+          </div>
+        </div>
+      </aside>
+    
+      <!-- Bloco de vídeos (fica embaixo do bloco acima) -->
+      <aside class="sidebar-box">
+        <h3>Mais Vídeos</h3>
+    
+        <div class="video-item">
+          <img src="https://i.imgur.com/LbTO9wY.jpg" alt="Vídeo 1">
+          <div>
+            <small>Vídeo sobre a biblioteca do Ciesa e seus recursos</small>
+            <a href="#">Biblioteca do Ciesa</a>
+          </div>
+        </div>
+    
+        <div class="video-item">
+          <img src="https://i.imgur.com/o8yoU4r.jpg" alt="Vídeo 2">
+          <div>
+            <small>Entrevista com alunos sobre a experiência no curso</small>
+            <a href="#">Experiência dos alunos</a>
+          </div>
+        </div>
+    
+        <div class="video-item">
+          <img src="https://i.imgur.com/mYnh65y.jpg" alt="Vídeo 3">
+          <div>
+            <small>Conheça os laboratórios de informática</small>
+            <a href="#">Laboratórios do Ciesa</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+    
+  
 
 </body>
 </html>
