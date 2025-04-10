@@ -306,11 +306,15 @@ aside {
 
 
 .right-sidebar {
-  display: flex;
+  display: block;
   flex-direction: column; /* Alinha os aside um embaixo do outro */
-  gap: 20px;
-  width: 300px;
+  gap: 100px; /* destacia entre os card laterais */
+  width: 300px; /* largura do card lateral */
   float: right;
+}
+
+.sidebar-box + .sidebar-box {
+  margin-top: 20px;
 }
 
 .sidebar-box {
@@ -327,10 +331,39 @@ aside {
   margin-bottom: 10px;
 }
 
+
+.sidebar-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Remove qualquer height que esteja forçando o tamanho */
+  height: auto !important;
+  min-height: auto !important;
+  padding: 5px;
+}
+
 .sidebar-card img,
 .video-item img {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 5px;
+}
+
+
+
+footer.footer-banner {
+  background-color: #2e2e2e;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 14px;
+  font-family: "Segoe UI", sans-serif;
+  margin-top: 40px;
+  width: 100%; /* força ocupar toda a largura */
+  clear: both;  /* limpa floats */
+}
+
+.no-scroll {
+  overflow: hidden;
 }
