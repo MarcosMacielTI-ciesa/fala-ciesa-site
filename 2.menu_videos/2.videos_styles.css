@@ -1,0 +1,361 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  /* Header */
+  header {
+    background-color: #7ab8e8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+  
+    min-height: 50px; /* <- força altura mínima mesmo se a logo for absolute */
+  
+  
+    position: relative;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 18px;
+  }
+  
+  .menu-icon span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: white;
+  }
+  
+  .menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .logo-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Container da barra de pesquisa */
+  #search-container {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    transition: width 0.3s ease;
+    width: 40px;  /* Começa pequena como no G1 */
+    overflow: hidden;
+  }
+  
+  /* Input de busca */
+  #search {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+  
+  /* Botão de busca (lupa) */
+  #search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Expande ao clicar */
+  #search-container.active {
+    width: 200px;
+  }
+  
+  #search-container.active #search {
+    width: 100%;
+  }
+  
+  
+  
+  
+  
+  
+  /* Menu lateral */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* <- corrigido para esconder 100% */
+    width: 300px;
+    height: 100%;
+    background-color: #7ab8e8;
+    color: white;
+    padding: 0px 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar img {
+    height: 90px;
+    width: 80px;
+    display: block;
+  }
+  
+  .sidebar a {
+    display: block;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    position: relative;
+  }
+  
+  .sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .sidebar-logo img {
+    height: 60px;
+    width: auto;
+    margin-top: -10px; /* ← isso sobe a imagem */
+  
+  }
+  
+  .sidebar-logo span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2725cf;
+    margin-top: -10px; /* ← isso sobe a imagem */
+  
+  }
+  
+  
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    z-index: 999;
+  }
+  
+  .overlay.show {
+    display: block;
+  }
+  
+  /* Main layout */
+  main {
+    display: flex;
+    padding: 20px 50px; /* ← aumentei nas laterais */
+    max-width: 1200px;
+    margin: 0 auto;
+  
+    padding-top: 100px; /* ajusta esse valor pra compensar a altura do header */
+  
+  }
+  
+  /**
+  main {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  */
+  
+  section {
+    flex: 3;
+    margin-left: -30px; /* 👈 Adiciona margem à esquerda */
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  
+  aside {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  /* Cards */
+  .card {
+    display: flex;
+    gap: 15px;
+    background: transparent; /* <- aqui fica transparente */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* despancia dos cars */
+    box-shadow: none; /* remove a sombra, opcional */
+  }
+  
+  .card img {
+    width: 380px; /* ou o tamanho que você quiser */
+    height: 230px; /* força uma altura fixa */
+    border-radius: 10px; /* serve pra arredondar os cantos da imagem */
+  }
+  
+  .card h2 {
+    color: #0077cc;
+    margin: 0;
+  }
+  
+  .card p {
+    margin: 10px 0;
+  }
+  
+  .card small {
+    color: #666;
+  }
+  
+  /* Vídeos */
+  .video-item {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .video-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  .video-item a {
+    color: #0077cc;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .video-item small {
+    display: block;
+    font-size: 13px;
+    color: #333;
+  }
+  
+  
+  .card-wrapper {
+    margin-bottom: 20px;
+  }
+  
+  .divider {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .right-sidebar {
+    display: block;
+    flex-direction: column; /* Alinha os aside um embaixo do outro */
+    gap: 100px; /* destacia entre os card laterais */
+    width: 300px; /* largura do card lateral */
+    float: right;
+  }
+  
+  .sidebar-box + .sidebar-box {
+    margin-top: 20px;
+  }
+  
+  .sidebar-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .sidebar-card,
+  .video-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .sidebar-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Remove qualquer height que esteja forçando o tamanho */
+    height: auto !important;
+    min-height: auto !important;
+    padding: 5px;
+  }
+  
+  .sidebar-card img,
+  .video-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  
+  
+  footer.footer-banner {
+    background-color: #2e2e2e;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    margin-top: 40px;
+    width: 100%; /* força ocupar toda a largura */
+    clear: both;  /* limpa floats */
+  }
+  
