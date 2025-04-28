@@ -4,6 +4,11 @@ body {
     background-color: #f9f9f9;
   }
   
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  
   /* Header */
   header {
     background-color: #7ab8e8;
@@ -11,7 +16,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 50px;
+    padding: 10px 20px;
   
     min-height: 50px; /* <- força altura mínima mesmo se a logo for absolute */
   
@@ -190,12 +195,9 @@ body {
   /* Main layout */
   main {
     display: flex;
-    padding: 20px 50px; /* ← aumentei nas laterais */
-    max-width: 1200px;
+    padding: 10px 20px;
+    width: 100%;
     margin: 0 auto;
-  
-    padding-top: 100px; /* ajusta esse valor pra compensar a altura do header */
-  
   }
   
   /**
