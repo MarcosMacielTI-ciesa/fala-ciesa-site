@@ -12,12 +12,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px 50px;
-
-  min-height: 50px; /* <- força altura mínima mesmo se a logo for absolute */
-
-
+  min-height: 50px;
   position: relative;
-
 }
 
 .menu {
@@ -46,7 +42,6 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -67,11 +62,6 @@ header {
   font-size: 18px;
 }
 
-
-
-
-
-
 /* Container da barra de pesquisa */
 #search-container {
   display: flex;
@@ -80,11 +70,10 @@ header {
   border-radius: 20px;
   padding: 5px 10px;
   transition: width 0.3s ease;
-  width: 40px;  /* Começa pequena como no G1 */
+  width: 40px;
   overflow: hidden;
 }
 
-/* Input de busca */
 #search {
   border: none;
   outline: none;
@@ -93,7 +82,6 @@ header {
   transition: width 0.3s ease;
 }
 
-/* Botão de busca (lupa) */
 #search-btn {
   background: none;
   border: none;
@@ -101,7 +89,6 @@ header {
   font-size: 16px;
 }
 
-/* Expande ao clicar */
 #search-container.active {
   width: 200px;
 }
@@ -110,16 +97,11 @@ header {
   width: 100%;
 }
 
-
-
-
-
-
 /* Menu lateral */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -100%; /* <- corrigido para esconder 100% */
+  left: -100%;
   width: 300px;
   height: 100%;
   background-color: #7ab8e8;
@@ -150,8 +132,6 @@ header {
   position: relative;
 }
 
-
-
 .sidebar-logo {
   display: flex;
   align-items: center;
@@ -162,18 +142,15 @@ header {
 .sidebar-logo img {
   height: 60px;
   width: auto;
-  margin-top: -10px; /* ← isso sobe a imagem */
-
+  margin-top: -10px;
 }
 
 .sidebar-logo span {
   font-size: 22px;
   font-weight: bold;
   color: #2725cf;
-  margin-top: -10px; /* ← isso sobe a imagem */
-
+  margin-top: -10px;
 }
-
 
 /* Overlay */
 .overlay {
@@ -194,29 +171,19 @@ header {
 /* Main layout */
 main {
   display: flex;
-  padding: 20px 50px; /* ← aumentei nas laterais */
+  padding: 20px 50px;
   max-width: 1200px;
   margin: 0 auto;
 }
-
-/**
-main {
-  display: flex;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-*/
 
 section {
   flex: 3;
-  margin-left: -30px; /* Adiciona margem à esquerda */
+  margin-left: -30px;
   margin-right: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
 
 aside {
   flex: 1;
@@ -230,17 +197,17 @@ aside {
 .card {
   display: flex;
   gap: 15px;
-  background: transparent; /* <- aqui fica transparente */
+  background: transparent;
   padding: 15px;
   border-radius: 10px;
-  margin-bottom: 20px; /* despancia dos cars */
-  box-shadow: none; /* remove a sombra, opcional */
+  margin-bottom: 20px;
+  box-shadow: none;
 }
 
 .card img {
-  width: 380px; /* ou o tamanho que você quiser */
-  height: 230px; /* força uma altura fixa */
-  border-radius: 10px; /* serve pra arredondar os cantos da imagem */
+  width: 380px;
+  height: 230px;
+  border-radius: 10px;
 }
 
 .card h2 {
@@ -282,7 +249,6 @@ aside {
   color: #333;
 }
 
-
 .card-wrapper {
   margin-bottom: 20px;
 }
@@ -293,19 +259,11 @@ aside {
   margin: 20px 0;
 }
 
-
-
-
-
-
-
-
-
 .right-sidebar {
   display: block;
-  flex-direction: column; /* Alinha os aside um embaixo do outro */
-  gap: 100px; /* destacia entre os card laterais */
-  width: 300px; /* largura do card lateral */
+  flex-direction: column;
+  gap: 100px;
+  width: 300px;
   float: right;
 }
 
@@ -327,12 +285,10 @@ aside {
   margin-bottom: 10px;
 }
 
-
 .sidebar-card {
   display: flex;
   align-items: center;
   gap: 10px;
-  /* Remove qualquer height que esteja forçando o tamanho */
   height: auto !important;
   min-height: auto !important;
   padding: 5px;
@@ -346,8 +302,6 @@ aside {
   border-radius: 5px;
 }
 
-
-
 footer.footer-banner {
   background-color: #2e2e2e;
   color: #f1f1f1;
@@ -356,10 +310,95 @@ footer.footer-banner {
   font-size: 14px;
   font-family: "Segoe UI", sans-serif;
   margin-top: 40px;
-  width: 100%; /* força ocupar toda a largura */
-  clear: both;  /* limpa floats */
+  width: 100%;
+  clear: both;
 }
 
 .no-scroll {
   overflow: hidden;
+}
+
+/* ======================= */
+/*         RESPONSIVO       */
+/* ======================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  section {
+    margin: 0;
+    width: 100%;
+  }
+
+  aside {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .right-sidebar {
+    width: 100%;
+    float: none;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
+
+  .menu {
+    margin-top: 10px;
+  }
+
+  #search-container {
+    margin-top: 10px;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  section, aside {
+    width: 100%;
+    margin: 0;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .right-sidebar {
+    width: 100%;
+    float: none;
+  }
+
+  footer.footer-banner {
+    font-size: 12px;
+    padding: 20px 0;
+  }
 }
