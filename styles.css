@@ -2,6 +2,13 @@ body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
   background-color: #f9f9f9;
+
+  overflow-x: hidden;
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -172,7 +179,7 @@ header {
 main {
   display: flex;
   padding: 20px 50px;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
