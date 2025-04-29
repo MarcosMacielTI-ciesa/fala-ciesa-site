@@ -2,9 +2,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
   background-color: #f9f9f9;
-
   overflow-x: hidden;
-
 }
 
 *, *::before, *::after {
@@ -30,18 +28,18 @@ header {
 }
 
 .menu-icon {
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 18px;
+  height: 14px;
 }
 
 .menu-icon span {
   display: block;
-  height: 3px;
-  width: 25px;
+  height: 2px;
+  width: 20px;
   background: white;
 }
 
@@ -55,7 +53,7 @@ header {
 }
 
 .logo img {
-  height: 60px;
+  height: 50px;
 }
 
 .logo-text {
@@ -69,7 +67,7 @@ header {
   font-size: 18px;
 }
 
-/* Container da barra de pesquisa */
+/* Search */
 #search-container {
   display: flex;
   align-items: center;
@@ -360,23 +358,42 @@ footer.footer-banner {
 /* Celulares */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    padding: 10px 20px;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    position: relative;
   }
 
   .logo {
-    position: static;
-    transform: none;
-    margin: 10px 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
   }
 
-  .menu {
-    margin-top: 10px;
+  .menu-icon span {
+    width: 16px;
+    height: 2px;
+  }
+
+  .logo img {
+    height: 36px;
+    max-width: 100px;
+  }
+
+  .logo-text strong {
+    font-size: 14px;
   }
 
   #search-container {
-    margin-top: 10px;
+    margin-left: auto;
+    padding: 3px 8px;
+    width: 36px;
+  }
+
+  #search-btn {
+    font-size: 14px;
   }
 
   main {
